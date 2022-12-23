@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="models/all-objects.class.js"></script>
+    <script src="models/moveable-object.class.js"></script>
+
+    <script src="models/moveable_objects/character.class.js"></script>
+    <script src="models/moveable_objects/thrown-bottle.class.js"></script>
+    <script src="models/moveable_objects/chicken.class.js"></script>
+    <script src="models/moveable_objects/little-chicken.class.js"></script>
+    <script src="models/moveable_objects/endboss.class.js"></script>
+    <script src="models/moveable_objects/cloud1.class.js"></script>
+    <script src="models/moveable_objects/cloud2.class.js"></script>
+    <script src="models/moveable_objects/background-objects.class.js"></script>
+
+    <script src="models/static_objects/status-bars.class.js"></script>
+    <script src="models/static_objects/health-bar.class.js"></script>
+    <script src="models/static_objects/bottle-bar.class.js"></script>
+    <script src="models/static_objects/coin-bar.class.js"></script>
+    <script src="models/static_objects/collect-bottle.class.js"></script>
+    <script src="models/static_objects/collect-coins.class.js"></script>
+
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="./js/game.js"></script>
+
+
+<body>
+
+    <h1>El Pollo Loco</h1>
+
+    <div class="container">
+
+        <canvas class="d-none" id="canvas" width="720" height="480">
+
+        </canvas>
+
+        <div id="playButtons" style="display:none;" class="playButtons">
+            <div id="throw" class="throw">Throw</div>
+                
+            <div class="arrows">
+               <div id="left" class="arrowFields"><img src="img/arrow-left.png"></div> 
+               <div id="up" class="arrowFields"><img src="img/arrow-up.png"></div> 
+               <div id="right" class="arrowFields"><img src="img/arrow-right.png"></div> 
+            </div>
+        </div>
+
+        <div id="startScreen" class="startScreenContainer">
+            <div class="buttonsContainer">
+                <img onclick="startGame()" src="img/icons8-anfang-48.png" class="buttons">
+                <img src="img/icons8-controller-48.png" class="buttons" onclick="openControls()">
+                <img id="soundBtn" onclick="turnVolume()" src="img/volume-up-4-48.png" class="buttons">
+            </div>
+        </div>
+
+
+        <div id="controls" class="controlsContainer" style="display: none;">
+            <div class="controls">
+                <div class="closeControlsContainer"> <span onclick="closeControls()" class="closeControls">X</span>
+                </div>
+                <div class="controlExplanation"> <span>Walk Left</span> <img class="explainImg"
+                        src="img/arrow-left.png">
+                </div>
+                <div class="controlExplanation"> <span>Walk Right</span> <img class="explainImg"
+                        src="img/arrow-right.png">
+                </div>
+                <div class="controlExplanation"> <span>Jump</span> <img class="explainImg" src="img/arrow-up.png"></div>
+                <div class="controlExplanation"> <span>Throw</span> <img class="explainImg" src="img/D.png"></div>
+            </div>
+        </div>
+
+
+        <div id="endScreenWin" class="endScreen d-none">
+            <div class="buttonsContainer">
+                <img onclick="goToStartMenu()" src="img/to-menu.png" class="buttonsEndScreen">
+                <img onclick="restartGame()" src="img/restart.png" class="buttonsEndScreen">
+            </div>
+            <div class="gameResult">You Win</div>
+        </div>
+        
+
+        <div id="endScreenLose" class="endScreen d-none">
+            <div class="buttonsContainer">
+                <img onclick="goToStartMenu()" src="img/to-menu.png" class="buttonsEndScreen">
+                <img onclick="restartGame()" src="img/restart.png" class="buttonsEndScreen">
+            </div>
+            <div style="color: rgb(191, 0, 0);" class="gameResult">You Lose</div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
